@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/laravel", (req, res) => {
-  scraper.getLaravelData().then(data => res.json(data));
+  scraper.getLaravelData().then(data => res.json(data)).catch(error => console.log(error));
 });
 
 const PORT = process.env.PORT || 5000;

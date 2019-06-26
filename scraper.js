@@ -15,13 +15,19 @@ const getLaravelData = () => {
       const $link = $element.find(".post__content h2 a");
       const $title = $element.find(".post__content h2 a");
       const $content = $element.find(".post__content p");
-      
+      const $authorGravatar = $element.find(".post__author img");
+      const $authorName = $element.find(".post__author .author__content h4 a");
+
       const article = {
         image: $image.attr("src"),
         date: $date.text(),
         link: $link.attr("href").replace("/", ""),
         title: $title.text(),
-        content: $content.text()
+        content: $content.text(),
+        author: {
+          gravatar: $authorGravatar.attr("src"),
+          name: $authorName.text()
+        }
       }
   
       articles.push(article);
