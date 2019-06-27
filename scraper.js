@@ -7,6 +7,7 @@ const getLaravelData = () => {
   return fetch(`${url}`).then(response => response.text()).then(data => {
     const $ = cheerio.load(data);
     const articles = [];
+    
     $(".card--post").each(function(i, el){
       const $element = $(el);
   
