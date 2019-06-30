@@ -1,12 +1,8 @@
 const express = require("express");
 const scraper = require("./scraper");
 const errorHandler = require("./handlers/errors");
-const connectDB = require("./models/index");
 
 const app = express();
-
-// Connect DB
-connectDB();
 
 app.get("/", (req, res) => {
   res.json({
