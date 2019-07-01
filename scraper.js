@@ -31,6 +31,7 @@ const getLaravelData = () => {
         }
       }
   
+      
       articles.push(article);
     });
     return articles;

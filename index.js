@@ -1,10 +1,11 @@
 const express = require("express");
-const scraper = require("./scraper");
 const errorHandler = require("./handlers/errors");
 
 const app = express();
 
 // Api Routes
+const laravel = require("./routes/api/laravel");
+app.use("/api/laravel", laravel);
 
 // Error Handler
 app.use((req, res, next) => {
