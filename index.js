@@ -4,19 +4,9 @@ const errorHandler = require("./handlers/errors");
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "Coding is fun"
-  });
-});
+// Api Routes
 
-app.get("/laravel", (req, res) => {
-  scraper
-    .getLaravelData()
-    .then(data => res.json(data))
-    .catch(error => console.log(error));
-});
-
+// Error Handler
 app.use((req, res, next) => {
   let err = new Error("Not Found");
   err.status = 404;

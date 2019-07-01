@@ -1,12 +1,16 @@
 const { getLaravelData } = require("../scraper");
-const db = require("../models");
 
-exports.laravel = async (req, res, next) => {
+exports.laravelScraper = async (req, res, next) => {
   try {
-    let data = await getLaravelData();
-    
+    const data = await getLaravelData();
+    res.status(200).json(data);
     
   } catch (error) {
-    next(error);
+    next({
+      status: 500,
+      message: "Oops! Something went wrong"
+    });
   }
 }
+
+// Logic - Combination of data from all the language sites into one array
